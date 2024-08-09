@@ -56,20 +56,20 @@ This ensures only the owner can access the `.ssh` directory and its contents.
 
 finally, this is one little detail most people leave out: you might run into an error like below if you dont purge openssh from your linux server before trying to connect.
 
+Before purge:
+
 ![alt text](ssh-no-purge-error.png)
 
-
-
-
-
 purge openssh and reinstall it before you try to connect.
-
-
 
        ```bash
         sudo apt-get purge openssh-server
         sudo apt-get install openssh-server
         ```
+
+After Purge: 
+
+![alt text](ssh-after-purge.png)
 
 **3. Connecting to Your Linux Server:**
 
