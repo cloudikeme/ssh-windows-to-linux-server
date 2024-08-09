@@ -1,6 +1,8 @@
 # Securely Accessing Your Linux Server from Windows using SSH Keys
 
-Previously, I wrote about how I revived my old dead iMac with a fresh Ubuntu install and how I set up [barrierKVM](https://github.com/debauchee/barrier) for free to share one mouse and keyboard between them and copy from clipboard to clipboard. In this article, you will learn how to set up SSH key-based authentication for accessing your Linux server from a Windows client. This method enhances security by eliminating the need for password-based logins.
+Previously, I wrote about how I revived my old dead iMac with a fresh Ubuntu install and how I set up [barrierKVM](https://github.com/debauchee/barrier) for free to share one mouse and keyboard between them and copy from clipboard to clipboard. 
+
+In this article, you will set up SSH key-based authentication for accessing your Linux server from a Windows client. This method enhances security by eliminating the need for password-based logins.
 
 So, let’s get started!
 
