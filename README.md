@@ -47,12 +47,25 @@ So lets get started!
    4. **Paste the contents of your Windows client's `id_rsa.pub` into this file. (You copied it to your clipboard in the previous step).** 
    5. **Save and close `authorized_keys` (Ctrl+X, Y, Enter in nano).** 
    6. **Set appropriate permissions (important!):**
-       ```bash
-       chmod 700 ~/.ssh
-       chmod 600 ~/.ssh/authorized_keys
-       ```
+```bash
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+```
 
 This ensures only the owner can access the `.ssh` directory and its contents.
+
+**3. Connecting to Your Linux Server:**
+
+   1. **From your Windows PowerShell or Command Prompt, run:**
+       ```powershell
+       ssh -i $env:USERPROFILE\.ssh\id_rsa username@linux_server_ip 
+       ```
+       Replace `username` with your Linux username and `linux_server_ip` with the IP address or hostname of your server.
+
+![alt text](image.png)
+
+2. **If prompted, enter your SSH key passphrase.**
+3. **You should now be logged into your Linux server!**
 
 finally, this is one little detail most people leave out: you might run into an error like below if you dont purge openssh from your linux server before trying to connect.
 
@@ -62,26 +75,14 @@ Before purge:
 
 purge openssh and reinstall it before you try to connect.
 
-       ```bash
-        sudo apt-get purge openssh-server
-        sudo apt-get install openssh-server
-        ```
+```bash
+sudo apt-get purge openssh-server
+sudo apt-get install openssh-server
+```
 
 After Purge: 
 
 ![alt text](ssh-after-purge.png)
-
-**3. Connecting to Your Linux Server:**
-
-   1. **From your Windows PowerShell or Command Prompt, run:**
-       ```powershell
-       ssh -i $env:USERPROFILE\.ssh\id_rsa username@linux_server_ip 
-       ```
-       Replace `username` with your Linux username and `linux_server_ip` with the IP address or hostname of your server.
-   2. **If prompted, enter your SSH key passphrase.**
-   3. **You should now be logged into your Linux server!**
-
-
 
 **Troubleshooting:**
 
